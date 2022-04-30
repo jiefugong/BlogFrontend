@@ -1,0 +1,7 @@
+# Hi, I'm Jeff!
+
+I'm currently a Senior Software Engineer working at [Affirm](https://www.affirm.com/). At Affirm, I've worked on the Billing and Loans Data teams where I've built scalable, performant data pipelines that process terabytes of data daily in order to serve core servicing data to internal teams.
+
+Prior to Affirm, I worked at [Twitch](https://twitch.tv) where I was focused on building out the company's internal transcoding solution. I also developed Twitch's proprietary ABR algorithm (affectionately, the [auto feature](https://medium.com/twitch-news/use-the-auto-quality-option-for-stress-free-streams-dc1f89024f2a) for selecting a playback bitrate).
+
+Outside of work, I enjoy playing with my 6 year old dog Riley, [DJ'ing](https://soundcloud.com/dj_ikstra) electronic music, and playing Valorant poorly.
