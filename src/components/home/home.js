@@ -12,14 +12,13 @@ const Home = () => {
     fetch(API_URL + 'get_posts')
       .then(response => response.json())
       .then(data => {
-        if (data.all_posts.length > 0) {
+        if (data.all_posts && data.all_posts.length > 0) {
           setBlogPosts(data.all_posts);          
         } else{
           console.log('Returned empty response when trying to fetch all blog posts')
         }
       })
       .catch(error => {
-        console.log('Got error');
         console.log(error);
       })
   }, [])

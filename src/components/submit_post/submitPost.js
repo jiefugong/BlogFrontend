@@ -2,16 +2,21 @@
  * A component that will allow us to submit multiple text snippets
  * and label them as either regular text or code snippets
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router";
 import classNames from "classnames";
 
 import { API_URL } from "../../constants/constants";
+import { GlobalContext } from "../../context/globalState";
 
 
 const SubmitPost = () => {
+  const navigate = useNavigate();
+
   // The title of the Blog Post
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
+  const { loggedIn } = useContext(GlobalContext);
 
   // Whether or not uploading our text blocks to the server was successful
   const [uploadSuccessful, setUploadSuccessful] = useState(null);
@@ -90,6 +95,13 @@ const SubmitPost = () => {
       setUploadSuccessful(null);
     }, 3000)
   }, [uploadSuccessful])
+
+  useEffect(() => {
+    console.log(loggedIn);
+    if (!loggedIn) {
+      navigate('/login');
+    }
+  }, [loggedIn])
 
   return (
     <div className="flex flex-col items-center w-full mt-6 space-y-4 text-gray-500">
