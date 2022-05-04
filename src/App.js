@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="flex flex-col items-center bg-blue-50 w-screen min-h-screen text-white font-sans">
       <Header/>
-      <hr className="w-3/5 border-slate-300 mb-2"/>
+      <hr className="w-full xl:w-3/5 border-slate-300 mb-2"/>
 
       <GlobalProvider>
         <Routes>

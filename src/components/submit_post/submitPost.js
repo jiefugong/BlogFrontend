@@ -96,8 +96,9 @@ const SubmitPost = () => {
     }, 3000)
   }, [uploadSuccessful])
 
+
+  // Redirect the user away from this page if they are not logged in
   useEffect(() => {
-    console.log(loggedIn);
     if (!loggedIn) {
       navigate('/login');
     }

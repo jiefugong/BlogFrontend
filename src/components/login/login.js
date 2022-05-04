@@ -25,6 +25,10 @@ const Login = () => {
       setTimeout(() => {
         navigate(-1);
       }, 3000)
+    } else {
+      setTimeout(() => {
+        setSuccessfulLogin(null);
+      }, 3000)
     }
   }, [successfulLogin])
 
@@ -91,6 +95,11 @@ const Login = () => {
       { successfulLogin &&
         <div className="flex w-3/5 bg-green-200 py-2 rounded-md justify-center text-gray-700">
           Successful Login! Redirecting you to your previous page...
+        </div>
+      }
+      { (successfulLogin !== null  && !successfulLogin) &&
+        <div className="flex w-3/5 bg-red-200 py-2 rounded-md justify-center text-gray-700">
+          Login failed - please try again!
         </div>
       }
       <div className="flex flex-col w-3/5 h-2/6 bg-blue-200 justify-center items-center space-y-4 px-12 rounded-md">

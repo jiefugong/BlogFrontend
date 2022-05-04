@@ -19,7 +19,7 @@ const Resume = () => {
     const renderedResume = RESUME_BLURBS.map((blurb) => {
       const colorAccent = classNames("flex", "w-1", blurb.title)
       return (
-        <div className="flex w-1/2 space-x-8 mt-8">
+        <div className="flex w-full xl:w-1/2 space-x-8 mt-8 px-6 xl:px-0">
           <div className={colorAccent}/>
           <div className="flex w-11/12 h-full">
             <ReactMarkdown

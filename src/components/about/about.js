@@ -17,15 +17,15 @@ const About = () => {
   }, [])
 
   return (
-    <div className="flex w-3/5 mt-12">
-      <div className="flex w-1/2 h-full">
+    <div className="flex flex-col px-8 xl:w-3/5 xl:flex-row xl:space-x-12 sm:w-full mt-8 xl:mt-12">
+      <div className="flex xl:w-1/2 sm:w-full h-full">
         <img
           src="/me.jpeg"
           className="object-cover w-full"/>
       </div>
-      <div className="flex flex-col w-1/2 mt-6 text-gray-600">
+      <div className="flex flex-col xl:w-1/2 sm:w-full mt-6 text-gray-600">
         <ReactMarkdown
-          className="whitespace-pre-line text-sm px-8 py-2"
+          className="whitespace-pre-line text-sm py-4"
           children={blurb}
           remarkPlugins={[remarkGfm]}
           components={{
