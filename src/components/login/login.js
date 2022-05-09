@@ -23,12 +23,13 @@ const Login = () => {
   useEffect(() => {
     if (successfulLogin) {
       setTimeout(() => {
-        navigate(-1);
-      }, 3000)
+        // navigate(-1);
+        navigate('/');
+      }, 2000)
     } else {
       setTimeout(() => {
         setSuccessfulLogin(null);
-      }, 3000)
+      }, 2000)
     }
   }, [successfulLogin])
 

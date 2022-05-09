@@ -31,7 +31,7 @@ const BlogPost = () => {
     return (
       <div className="flex text-sm">
         <ReactMarkdown
-          className="list-decimal space-y-4"
+          className="list-decimal w-full space-y-4"
           children={post.text}
           components={{
             code({node, inline, className, children, ...props}) {

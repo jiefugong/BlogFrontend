@@ -8,6 +8,11 @@ import BlogCard from "../blog_card/blogCard";
 const Home = () => {
   const [blogPosts, setBlogPosts] = useState([]);
 
+  const removeBlogPost = (uuid) => {
+    const newBlogPosts = blogPosts.filter((post) => post.uuid !== uuid);
+    setBlogPosts(newBlogPosts);
+  }
+
   useEffect(() => {
     fetch(API_URL + 'get_posts')
       .then(response => response.json())
@@ -26,7 +31,15 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full items-center space-y-4">
       {blogPosts.map((post) => {
-        return <BlogCard title={post.title} uuid={post.uuid} key={post.uuid} />
+        return (
+          <BlogCard
+            title={post.title}
+            uuid={post.uuid}
+            created={post.created}
+            removeBlogPost={removeBlogPost}
+            key={post.uuid} 
+          />
+        )
       })}
     </div>
   )
