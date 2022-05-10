@@ -23,7 +23,7 @@ const About = () => {
           src="/me.jpeg"
           className="object-cover w-full"/>
       </div>
-      <div className="flex flex-col xl:w-1/2 sm:w-full mt-6 text-gray-600">
+      <div className="flex flex-col xl:w-1/2 sm:w-full text-gray-600">
         <ReactMarkdown
           className="whitespace-pre-line text-sm py-4"
           children={blurb}
