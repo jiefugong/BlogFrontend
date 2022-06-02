@@ -5,7 +5,7 @@ import { API_URL } from "../../constants/constants";
 import BlogCard from "../blog_card/blogCard";
 
 
-const Home = () => {
+const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
 
   const removeBlogPost = (uuid) => {
@@ -29,21 +29,33 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="flex flex-col w-full items-center space-y-4">
-      {blogPosts.map((post) => {
-        return (
-          <BlogCard
-            title={post.title}
-            uuid={post.uuid}
-            created={post.created}
-            removeBlogPost={removeBlogPost}
-            key={post.uuid} 
-          />
-        )
-      })}
+    <div className="flex flex-col w-full h-screen items-center">
+      <div className="flex flex-col w-1/2 space-y-4 mt-12">
+        <div className="text-gray-700">
+          <p className="text-4xl">
+            Unique Thoughts
+          </p>
+          <p className="text-sm">
+            (from a unique male asian-american software engineer in the bay area)
+          </p>
+        </div>
+        <div/>        
+        {blogPosts.map((post) => {
+          return (
+            <BlogCard
+              title={post.title}
+              uuid={post.uuid}
+              created={post.created}
+              removeBlogPost={removeBlogPost}
+              key={post.uuid} 
+            />
+          )
+        })}
+        <div className="py-2"/>
+      </div>
     </div>
   )
 
 };
 
-export default Home;
+export default Blog;

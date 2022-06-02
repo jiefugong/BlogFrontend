@@ -23,7 +23,6 @@ const Login = () => {
   useEffect(() => {
     if (successfulLogin) {
       setTimeout(() => {
-        // navigate(-1);
         navigate('/');
       }, 2000)
     } else {
@@ -82,7 +81,7 @@ const Login = () => {
         </div>
         <div className="flex flex-row-reverse w-full">
           <button
-            className="flex text-xs px-2 py-1 rounded-md bg-red-200 hover:bg-red-300"
+            className="flex text-xs px-2 py-1 rounded-md bg-orange-300 hover:bg-orange-400"
             onClick={attemptLogIn}>
               Submit
           </button>
@@ -95,7 +94,7 @@ const Login = () => {
     <div className="flex flex-col w-3/5 h-screen-90 justify-center items-center text-black text-sm space-y-6">
       { successfulLogin &&
         <div className="flex w-3/5 bg-green-200 py-2 rounded-md justify-center text-gray-700">
-          Successful Login! Redirecting you to your previous page...
+          Successful login! Redirecting you to the home page...
         </div>
       }
       { (successfulLogin !== null  && !successfulLogin) &&
@@ -103,7 +102,7 @@ const Login = () => {
           Login failed - please try again!
         </div>
       }
-      <div className="flex flex-col w-3/5 h-2/6 bg-blue-200 justify-center items-center space-y-4 px-12 rounded-md">
+      <div className="flex flex-col w-3/5 h-2/6 bg-orange-200 justify-center items-center space-y-4 px-12 rounded-md">
         { loginForm() }
       </div>
     </div>

@@ -1,34 +1,32 @@
 import { Routes, Route } from 'react-router';
-import './App.css';
 
 import About from './components/about/about';
 import BlogPost from './components/blog_post/blogPost';
-import Header from './components/header/header';
-import Home from './components/home/home';
+import Blog from './components/blog/blog';
 import Login from './components/login/login';
-import Resume from './components/resume/resume';
+import SideBar from './components/sidebar/sidebar';
 import SubmitPost from './components/submit_post/submitPost';
+import Projects from './components/projects/projects';
 
 import { GlobalProvider } from './context/globalState';
 
 
 function App() {
   return (
-    <div className="flex flex-col items-center bg-blue-50 w-screen min-h-screen text-white font-sans">
+    <div className="flex flex-col items-center justify-center w-screen text-white font-sans">
       <GlobalProvider>
-        <Header/>
-        <hr className="w-full xl:w-3/5 border-slate-300 mb-2"/>
+        <SideBar/>
         <Routes>
           <Route
             path="/"
             element={<About/>}
           />
           <Route
-            path="/posts"
-            element={<Home/>}
+            path="/blog"
+            element={<Blog/>}
           />
           <Route
-            exact path="/post/:postId"
+            exact path="/blog/:postId"
             element={<BlogPost/>}
           />
           <Route
@@ -36,12 +34,12 @@ function App() {
             element={<SubmitPost/>}
           />
           <Route
-            path="/accomplishments"
-            element={<Resume/>}
-          />
-          <Route
             path="/login"
             element={<Login/>}
+          />
+          <Route
+            path="/projects"
+            element={<Projects/>}
           />
         </Routes>
       </GlobalProvider>

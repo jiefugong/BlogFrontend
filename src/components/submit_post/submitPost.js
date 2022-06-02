@@ -65,7 +65,7 @@ const SubmitPost = () => {
             name="text-block"
             type="text"
             rows={6}
-            className="py-3 px-4 block w-full text-sm shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+            className="py-3 px-4 block w-full text-sm shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-2 border-black-200 rounded-md"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
@@ -105,8 +105,11 @@ const SubmitPost = () => {
   }, [loggedIn])
 
   return (
-    <div className="flex flex-col items-center w-full mt-6 space-y-4 text-gray-500">
+    <div className="flex flex-col items-center justify-center w-full h-screen space-y-6 text-gray-500">
       { uploadSuccessful !== null && renderUploadStatus() }
+      <div className="flex w-3/5 text-2xl my-4">
+        Submit New Post
+      </div>
       <div className="flex flex-col w-3/5 space-y-2">
         <label
           htmlFor="title"
@@ -118,7 +121,7 @@ const SubmitPost = () => {
           name="title"
           type="text"
           value={title}
-          className="px-4 py-3 text-sm rounded-md w-full text-gray-900"
+          className="px-4 py-3 text-sm rounded-md w-full text-gray-900 shadow-sm border-2 border-black-200"
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>

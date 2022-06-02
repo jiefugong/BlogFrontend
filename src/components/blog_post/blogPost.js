@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router";
 
 import ReactMarkdown from "react-markdown";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
@@ -13,6 +14,7 @@ const BlogPost = () => {
   let params = useParams();
   const postId = params.postId;
 
+  const navigate = useNavigate();
   const [post, setPost] = useState('');
 
   useEffect(() => {
@@ -58,7 +60,12 @@ const BlogPost = () => {
 
   return (
     <div className="flex w-full justify-center">
-      <div className="flex flex-col w-7/12 space-y-4 text-gray-800 mt-4 mb-10">
+      <div className="flex flex-col w-1/2 space-y-4 text-gray-800 my-12">
+        <div
+          className="mb-2 text-blue-400 hover:text-blue-500 hover:cursor-pointer"
+          onClick={() => navigate(-1)}>
+            Back
+        </div>
         <div className="text-4xl tracking-tight">
           {post.title}
         </div>
