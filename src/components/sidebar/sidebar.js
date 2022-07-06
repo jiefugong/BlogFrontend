@@ -1,7 +1,5 @@
 import {
-  CameraIcon,
   CollectionIcon,
-  ChatIcon,
   HomeIcon,
   BookOpenIcon,
   LoginIcon,

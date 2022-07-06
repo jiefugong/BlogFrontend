@@ -91,18 +91,18 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col w-3/5 h-screen-90 justify-center items-center text-black text-sm space-y-6">
+    <div className="flex flex-col w-full xl:w-3/5 h-screen-90 justify-center items-center text-black text-sm space-y-6">
       { successfulLogin &&
-        <div className="flex w-3/5 bg-green-200 py-2 rounded-md justify-center text-gray-700">
+        <div className="flex w-10/12 xl:w-3/5 bg-green-200 py-2 rounded-md justify-center text-gray-700">
           Successful login! Redirecting you to the home page...
         </div>
       }
       { (successfulLogin !== null  && !successfulLogin) &&
-        <div className="flex w-3/5 bg-red-200 py-2 rounded-md justify-center text-gray-700">
+        <div className="flex w-10/12 xl:w-3/5 bg-red-200 py-2 rounded-md justify-center text-gray-700">
           Login failed - please try again!
         </div>
       }
-      <div className="flex flex-col w-3/5 h-2/6 bg-orange-200 justify-center items-center space-y-4 px-12 rounded-md">
+      <div className="flex flex-col w-10/12 xl:w-3/5 h-2/6 bg-orange-200 justify-center items-center space-y-4 px-12 rounded-md">
         { loginForm() }
       </div>
     </div>

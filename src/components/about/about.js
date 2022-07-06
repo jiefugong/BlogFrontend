@@ -18,15 +18,15 @@ const About = () => {
   }, [])
 
   return (
-    <div className="flex flex-col w-full h-screen items-center justify-center space-y-12 px-4">
-      <div className="flex flex-row w-8/12 space-x-12">
+    <div className="flex flex-col w-full min-h-screen items-center justify-center xl:space-y-4 2xl:space-y-8 px-4 py-4">
+      <div className="flex flex-col xl:flex-row w-10/12 xl:w-8/12 xl:space-x-12">
         <img
           src="/me.jpeg"
-          className="flex w-1/2 object-contain"
+          className="flex w-full xl:w-1/2 object-contain"
         />
-        <div className="flex flex-col xl:w-1/2 sm:w-full text-gray-600">
+        <div className="flex flex-col xl:w-1/2 w-full text-gray-600">
           <ReactMarkdown
-            className="whitespace-pre-line text-sm py-4"
+            className="whitespace-pre-line text-sm 2xl:text-lg py-4"
             children={blurb}
             remarkPlugins={[remarkGfm]}
             components={{
@@ -35,9 +35,9 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="flex text-sm text-blue-800 hover:text-blue-500 hover:cursor-pointer">
-        <Link to={'/blog'}>
-          To learn more about me, please consider reading some of my random musings :-)
+      <div className="flex items-center justify-center w-10/12 text-sm mt-4 2xl:text-lg text-blue-800 hover:text-blue-500 hover:cursor-pointer">
+        <Link className="flex underline" to={'/blog'}>
+            Please click here to read some of my random musings!
         </Link>
       </div>
     </div>

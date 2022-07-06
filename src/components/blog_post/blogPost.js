@@ -37,7 +37,8 @@ const BlogPost = () => {
           children={post.text}
           components={{
             code({node, inline, className, children, ...props}) {
-              const match = /language-(\w+)/.exec(className || '')
+              const match = /language-(\w+)/.exec(className || '');
+              console.log(match);
               return !inline && match ? (
                 <SyntaxHighlighter
                   children={String(children).replace(/\n$/, '')}
@@ -60,7 +61,7 @@ const BlogPost = () => {
 
   return (
     <div className="flex w-full justify-center">
-      <div className="flex flex-col w-1/2 space-y-4 text-gray-800 my-12">
+      <div className="flex flex-col w-10/12 xl:w-1/2 space-y-4 text-gray-800 my-12">
         <div
           className="mb-2 text-blue-400 hover:text-blue-500 hover:cursor-pointer"
           onClick={() => navigate(-1)}>

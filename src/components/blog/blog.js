@@ -30,12 +30,12 @@ const Blog = () => {
 
   return (
     <div className="flex flex-col w-full h-screen items-center">
-      <div className="flex flex-col w-1/2 space-y-4 mt-12">
+      <div className="flex flex-col w-2/3 xl:w-1/2 space-y-2 xl:space-y-4 mt-12">
         <div className="text-gray-700">
-          <p className="text-4xl">
+          <p className="text-4xl 2xl:text-6xl">
             Unique Thoughts
           </p>
-          <p className="text-sm">
+          <p className="text-sm 2xl:text-lg">
             (from a unique male asian-american software engineer in the bay area)
           </p>
         </div>
